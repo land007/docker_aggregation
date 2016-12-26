@@ -15,10 +15,10 @@ MAINTAINER Land007 <land_007@163.com>
 
 RUN apt-get update && apt-get install -y python-opencv
 
-RUN cd /root && git clone --recursive https://github.com/rbgirshick/fast-rcnn.git
-RUN cd /root/fast-rcnn/lib && make
-ADD Makefile.config /root/fast-rcnn/caffe-fast-rcnn/
-RUN cd /root/fast-rcnn/caffe-fast-rcnn && make -j8 && make pycaffe
+RUN cd /root && git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
+RUN cd /root/py-faster-rcnn/lib && make
+ADD Makefile.config /root/py-faster-rcnn/caffe-fast-rcnn/
+RUN cd /root/py-faster-rcnn/caffe-fast-rcnn && make -j8 && make pycaffe
 RUN pip install easydict
 
 #ADD https://people.eecs.berkeley.edu/~rbg/fast-rcnn-data/fast_rcnn_models.tgz /root/fast-rcnn/data/
